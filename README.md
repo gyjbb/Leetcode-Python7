@@ -47,7 +47,7 @@ class Solution:
 [leetcode](https://leetcode.com/problems/reverse-string-ii/description/)\
 [reading](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0541.%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2II.md)\
 [video](https://www.bilibili.com/video/BV1dT411j7NN/?spm_id_from=333.788&vd_source=63f26efad0d35bcbb0de794512ac21f3)\
-Same but different! I came across problems when I use two pointers to solve this question. The right solution directly used <ins>while left<len(s)</ins>. That's cool. 
+Same but different! When I used two pointers to solve this question, time limits were exceeded. The right solution directly used <ins>while left<len(s)</ins>. That's simple. 
 ```python
 # ways 1: use two pointers, a left and a right one. The right one is inside the left one's loop:
 class Solution:
