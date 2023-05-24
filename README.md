@@ -1,5 +1,5 @@
 # Leetcode-Python7
-## 344. Reverse String, 541. Reverse String II, Replace the tab, 151. Reverse Words in a String
+## 344. Reverse String, 541. Reverse String II, Replace the tab, 151. Reverse Words in a String, Reverse certain characters in a string
 
 May 19, 2023  4h
 
@@ -117,7 +117,7 @@ class Solution:
 [video](https://www.bilibili.com/video/BV1uT41177fX/?spm_id_from=333.788&vd_source=63f26efad0d35bcbb0de794512ac21f3)\
 We can use built in function, or use two pointers, a slow one and a faster one to solve this question.\
 When not using the built in function, we can firstly reverse the whole string, then reverse again within each word. The problem is how to delete multiple tabs, and only one tab can exist between two words. Here we use two pointers. Use the fast one to get the non-tab ones, and give to slow pointer.\
-But one tab should still exists between words. So we use slow pointer to point to a tab place and move forward a step. Then pass the fast pointer's value to slow pointer.\     
+But one tab should still exists between words. So we use slow pointer to point to a tab place and move forward a step. Then pass the fast pointer's value to slow pointer.     
 After removeing extra tabs, we can finally reverse the whole string, then reverse again within each word.  
 ```python
 # ways 1: use built in function: 先删除空白，然后整个反转，最后单词反转。 因为字符串是不可变类型，所以反转单词的时候，需要将其转换成列表，然后通过join函数再将其转换成列表，所以空间复杂度不是O(1)
@@ -131,7 +131,27 @@ class Solution:
         s = ' '.join(word[::-1] for word in s.split())
         return s    
 ```
-    
+```python
+# ways 2: use two pointers:
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        # 将字符串拆分为单词，即转换成列表类型
+        words = s.split()
+
+        # 反转单词
+        left, right = 0, len(words) - 1
+        while left < right:
+            words[left], words[right] = words[right], words[left]
+            left += 1
+            right -= 1
+
+        # 将列表转换成字符串
+        return " ".join(words)
+```
+
+## Reverse certain characters in a string
+[reading](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/%E5%89%91%E6%8C%87Offer58-II.%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.md)\
+                           
     
     
     
