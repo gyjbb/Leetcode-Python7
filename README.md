@@ -115,8 +115,22 @@ class Solution:
 [leetcode](https://leetcode.com/problems/reverse-words-in-a-string/)\
 [reading](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0151.%E7%BF%BB%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%87%8C%E7%9A%84%E5%8D%95%E8%AF%8D.md)\
 [video](https://www.bilibili.com/video/BV1uT41177fX/?spm_id_from=333.788&vd_source=63f26efad0d35bcbb0de794512ac21f3)\
-    
-    
+We can use built in function, or use two pointers, a slow one and a faster one to solve this question.\
+When not using the built in function, we can firstly reverse the whole string, then reverse again within each word. The problem is how to delete multiple tabs, and only one tab can exist between two words. Here we use two pointers. Use the fast one to get the non-tab ones, and give to slow pointer.\
+But one tab should still exists between words. So we use slow pointer to point to a tab place and move forward a step. Then pass the fast pointer's value to slow pointer.\     
+After removeing extra tabs, we can finally reverse the whole string, then reverse again within each word.  
+```python
+# ways 1: use built in function: 先删除空白，然后整个反转，最后单词反转。 因为字符串是不可变类型，所以反转单词的时候，需要将其转换成列表，然后通过join函数再将其转换成列表，所以空间复杂度不是O(1)
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        # 删除前后空白
+        s = s.strip()
+        # 反转整个字符串
+        s = s[::-1]
+        # 将字符串拆分为单词，并反转每个单词
+        s = ' '.join(word[::-1] for word in s.split())
+        return s    
+```
     
     
     
