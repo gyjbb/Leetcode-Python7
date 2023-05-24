@@ -4,7 +4,7 @@
 May 19, 2023  4h
 
 The seventh day, we will start to learn about **string**.\
-The challenges today are about ~~need to finish soon~~.
+The challenges today are about reverse strings. Since strings are immutable, so when we use python to reverse the string, we firstly change the string to a list. Then use slice or pointers to solve the prroblems. Or we can build a new list and use extra space to store the rersult, and use slice. Finally, join the characters in list to return the required string.
 
 ## 344. Reverse String
 [leetcode](https://leetcode.com/problems/reverse-string/)\
