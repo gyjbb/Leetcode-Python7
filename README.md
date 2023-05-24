@@ -150,7 +150,26 @@ class Solution:
 ```
 
 ## Reverse certain characters in a string
-[reading](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/%E5%89%91%E6%8C%87Offer58-II.%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.md)\
+[reading](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/%E5%89%91%E6%8C%87Offer58-II.%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.md)
+Here, we use a special way to solve the problem: firstly reverse the first n characters, then reverse the (n+1) to the last characters. Finnaly, reverse the whole string and we will get the desired sring.
+```python
+# ways 1: use slice:
+class Solution:
+    def reverseLeftWords(self, s: str, n: int) -> str:
+        return s[n:] + s[:n]                           
+```
+```python
+# ways 2: use reversed + join
+class Solution:
+    def reverseLeftWords(self, s: str, n: int) -> str:
+        s = list(s)
+        s[0:n] = list(reversed(s[0:n]))
+        s[n:] = list(reversed(s[n:]))
+        s.reverse()
+        
+        return "".join(s)    
+```
+                           
                            
     
     
