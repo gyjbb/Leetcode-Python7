@@ -10,7 +10,7 @@ The challenges today are about reverse strings. Since strings are immutable, whe
 [leetcode](https://leetcode.com/problems/reverse-string/)\
 [reading](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0344.%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.md)\
 [video](https://www.bilibili.com/video/BV1fV4y17748/?spm_id_from=pageDriver&vd_source=63f26efad0d35bcbb0de794512ac21f3)\
-Algorithms of string is similar to arrays.\
+Algorithms of string are similar to arrays.\
 When to use functions and when not to use them.\
 Here we can use two pointers, one at the head, one at the end. And they move together to the center to get the result.
 ```python
@@ -117,8 +117,8 @@ class Solution:
 [video](https://www.bilibili.com/video/BV1uT41177fX/?spm_id_from=333.788&vd_source=63f26efad0d35bcbb0de794512ac21f3)\
 We can use built in function, or use two pointers, a slow one and a faster one to solve this question.\
 When not using the built in function, we can firstly reverse the whole string, then reverse again within each word. The problem is how to delete multiple tabs, and only one tab can exist between two words. Here we use two pointers. Use the fast one to get the non-tab ones, and give to slow pointer.\
-But one tab should still exists between words. So we use slow pointer to point to a tab place and move forward a step. Then pass the fast pointer's value to slow pointer.     
-After removeing extra tabs, we can finally reverse the whole string, then reverse again within each word.  
+But one tab should still exist between words. So we use a slow pointer to point to a tab place and move forward a step. Then pass the fast pointer's value to the slow pointer.     
+After removing extra tabs, we can finally reverse the whole string, then reverse again within each word.  
 ```python
 # ways 1: use built in function: 先删除空白，然后整个反转，最后单词反转。 因为字符串是不可变类型，所以反转单词的时候，需要将其转换成列表，然后通过join函数再将其转换成列表，所以空间复杂度不是O(1)
 class Solution:
@@ -151,7 +151,7 @@ class Solution:
 
 ## Reverse certain characters in a string
 [reading](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/%E5%89%91%E6%8C%87Offer58-II.%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.md)
-Here, we use a special way to solve the problem: firstly reverse the first n characters, then reverse the (n+1) to the last characters. Finnaly, reverse the whole string and we will get the desired sring.
+Here, we use a special way to solve the problem: firstly reverse the first n characters, then reverse the (n+1) to the last characters. Finaly, reverse the whole string and we will get the desired string.
 ```python
 # ways 1: use slice:
 class Solution:
